@@ -1,5 +1,5 @@
 #include <iostream>
-//#include <cstdlib>
+#include <cstdlib>
 #include <ctime>
 
 struct GameState {
@@ -47,24 +47,28 @@ void take_turn (GameState& my_game) {
     while (my_game.turn_over == false) {
         std::cout << "roll or hold? (r/h): ";
         std::cin >> my_game.choice;
-    }
-        if (my_game.choice == 'r')
+        if (my_game.choice == 'r') {
             roll_dice(my_game);
-        else if (my_game.choice == 'h')
+        }
+        else if (my_game.choice == 'h') {
             hold_turn(my_game);
-        else
+        }
+        else {
             std::cout<< "Invalid choice. Please either (r/h)\n";
-    std::cout << "Score Banked This Turn: " << my_game.score_this_turn << "\n\n";
+        }
+    }
+        std::cout << "Score Banked This Turn: " << my_game.score_this_turn << "\n\n";
 }
-
 void play_game(GameState& my_game) {
     while (my_game.game_over == false) {
-        if (my_game.game_score < 20)
+        if (my_game.game_score < 20) {
             take_turn(my_game);
-        else
+        }
+        else {
             std::cout << "You finished with a final score of " << my_game.game_score << " in " << my_game.turn_count << " turns!\n" <<
             "Thanks for playing PIG Dice!\n";
-        my_game.game_over = true;
+            my_game.game_over = true;
+        }
     }
 }
 
