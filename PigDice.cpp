@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-
+    
 struct GameState {
     char choice;
     int turn_count = 0;
