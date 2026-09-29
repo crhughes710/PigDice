@@ -1,7 +1,5 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <random>
+#include "DIE.h"
 
 struct GameState {
     char choice;
@@ -12,45 +10,6 @@ struct GameState {
     bool turn_over = false;
 };
 
-class Die {
-private:
-    int m_value;
-    int m_numOfSides;
-public:
-    Die () { // default constructor
-        m_value = 0;
-        m_numOfSides = 6;
-    }
-    void setNumOfSides(int numOfSides) {
-        switch (numOfSides) {
-            case 4:
-                m_numOfSides = 4;
-                break;
-            case 6:
-                m_numOfSides = 6;
-                break;
-            case 8:
-                m_numOfSides = 8;
-                break;
-            default:
-                m_numOfSides = 6;
-        }
-    }
-    int getNumOfSides() {
-        return m_numOfSides;
-    }
-
-    void setValue() {
-        std::random_device rd;
-        std::mt19937 gen(rd());
-        std::uniform_int_distribution<int> dis(1,m_numOfSides);
-        m_value = dis(gen);
-    }
-    int getValue() {
-        return m_value;
-    }
-};
-
 void display_rules() {
     std::cout << "Let's Play PIG Dice!\n\n" <<
             "* See how many turns it takes you to get to 20 points.\n" <<
@@ -59,9 +18,6 @@ void display_rules() {
 }
 
 void roll_dice(GameState& my_game, Die& myDie) {
-    //int x = time(0);
-    //srand(x);
-    //int die = 1 + rand() % 6;
     myDie.setValue();
     int die = myDie.getValue();
     if (die == 1) {
