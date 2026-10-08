@@ -14,10 +14,12 @@ public:
     TURN();
     //TURN(&);
     void takeTurn();
-    int getTurnScore();
+    int getTurnScore() const;
     void resetTurnover();
-    int getTurnCount();
-    void resetGameOver();
+    int getTurnCount() const;
+    void resetScoreThisTurn();
+private:
+    void roll();
 };
 
 #endif //PIGDICE__MY_VERSION__TURN_H
