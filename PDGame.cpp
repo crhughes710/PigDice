@@ -2,11 +2,17 @@
 #include "TURN.h"
 #include <iostream>
 
+
 PDGame::PDGame() {
     m_gameOver = false;
     m_gameScore = 0;
+    m_myTurn.setParentGame(this); // 7.
     displayRules();
     playGame();
+}
+
+int PDGame::getGameScore() { // 2.
+    return m_gameScore;
 }
 
 void PDGame::displayRules() {
@@ -23,7 +29,6 @@ void PDGame::playGame() {
             m_myTurn.resetScoreThisTurn();
             m_myTurn.takeTurn();
             m_gameScore= m_myTurn.getTurnScore() + m_gameScore;
-            // ^^^^^^^^^DELETE THIS AFTER POINTER^^^^^^^^^^^
         }
         else {
             std::cout << "You finished with a final score of " << m_gameScore << " in " << m_myTurn.getTurnCount() << " turns!\n" <<
