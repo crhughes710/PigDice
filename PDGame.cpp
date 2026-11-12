@@ -6,12 +6,11 @@
 PDGame::PDGame() {
     m_gameOver = false;
     m_gameScore = 0;
-    m_myTurn.setParentGame(this); // 7.
-    displayRules();
-    playGame();
+    //displayRules();
+    //playGame();
 }
 
-int PDGame::getGameScore() { // 2.
+int PDGame::getGameScore() {
     return m_gameScore;
 }
 

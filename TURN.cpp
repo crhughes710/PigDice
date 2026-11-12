@@ -1,7 +1,6 @@
 #include "TURN.h"
 #include "DIE.h"
 #include <iostream>
-#include "PDGame.h" // 8.
 
 TURN::TURN() {
     m_turnCount = 0;
@@ -10,13 +9,9 @@ TURN::TURN() {
     m_choice = 'p';
 }
 
-void TURN::setParentGame(PDGame* parentGame) { // 6.
-    m_parentGame = parentGame;
-}
-
 void TURN::takeTurn() {
     m_turnCount++;
-    std::cout << "TURN " << m_turnCount << " - Game Score: "  << m_parentGame->getGameScore() << "\n"; // 9.
+    std::cout << "TURN " << m_turnCount  << "\n";
     while (m_turnOver == false) {
         std::cout << "roll or hold? (r/h): ";
         std::cin >> m_choice;

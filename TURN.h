@@ -3,7 +3,7 @@
 #include "DIE.h"
 //#include "PDGame.h"
 
-class PDGame; // 3.
+class PDGame;
 
 class TURN {
 protected:
@@ -12,11 +12,8 @@ protected:
     bool m_turnOver;
     char m_choice;
     Die m_myDie;
-    PDGame* m_parentGame = nullptr; // 4.
 public:
     TURN();
-    void setParentGame(PDGame* parentGame); // 5.
-    //TURN(&);
     void takeTurn();
     int getTurnScore() const;
     void resetTurnover();

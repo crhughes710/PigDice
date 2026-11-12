@@ -9,7 +9,7 @@ protected:
     int m_gameScore;
 public:
     PDGame();
-    int getGameScore(); // 1.
+    int getGameScore();
 private:
     static void displayRules();
     void playGame();

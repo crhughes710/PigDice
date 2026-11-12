@@ -1,8 +1,9 @@
 #include "Multiplayer.h"
-#include "PDGame.h"
 
 int main() {
-    //PDGame();
-    Multiplayer();
+    Multiplayer game;
+    game.mpPlayGame();
+
+
     return 0;
 }
