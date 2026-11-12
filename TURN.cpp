@@ -27,7 +27,7 @@ void TURN::takeTurn() {
             m_turnOver = true;
         }
         else {
-            std::cout<< "Invalid choice. Please either (r/h)\n";
+            std::cout<< "Invalid choice!\n";
         }
     }
     std::cout << "Score Banked This Turn: " << m_scoreThisTurn<< "\n\n";

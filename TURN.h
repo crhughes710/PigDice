@@ -6,7 +6,7 @@
 class PDGame; // 3.
 
 class TURN {
-private:
+protected:
     int m_turnCount;
     int m_scoreThisTurn;
     bool m_turnOver;
