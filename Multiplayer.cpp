@@ -8,7 +8,7 @@
 Multiplayer::Multiplayer() {
     int count = 0;
     std::string tempName;
-    while (count <= 0) {
+    while (count <= 0) { // Since any input defaults the count to zero, I can just use a while loop instead of a try catch.
             std::cout << "\nHow many people are playing? ";
             std::cin >> count;
 

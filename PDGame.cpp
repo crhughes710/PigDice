@@ -6,8 +6,6 @@
 PDGame::PDGame() {
     m_gameOver = false;
     m_gameScore = 0;
-    //displayRules();
-    //playGame();
 }
 
 int PDGame::getGameScore() {
