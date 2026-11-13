@@ -6,11 +6,21 @@
 #include "PDGameV2.h"
 
 Multiplayer::Multiplayer() {
-    int count;
+    int count = 0;
     std::string tempName;
-    std::cout << "How many people are playing? ";
-    std::cin >> count;
-    std::cin.ignore();
+    while (count <= 0) {
+            std::cout << "\nHow many people are playing? ";
+            std::cin >> count;
+
+        if (std::cin.fail() || count <=0 ) {
+            std::cin.clear();
+            std::cin.ignore(100,'\n');
+            count = 0;
+        }
+        else {
+            std::cin.ignore(100,'\n');
+        }
+    }
     for (int i=0; i < count; i++) {
         std::cout << "Enter player " << i + 1 << "'s name: ";
         std::getline(std::cin, tempName);
